@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 
-import { Select, Text, Flex, Button } from '@chakra-ui/core'
+import { Select, Text, Flex, Button, PseudoBox } from '@chakra-ui/core'
 
 import { Table } from './Table'
 
@@ -38,15 +38,20 @@ export const Dashboard = () => {
           })}
         </Select>
         <EndTable/>
-        <Button
-          mt={2}
-          variant="outline"
-          variantColor="gray"
+        <PseudoBox
+          as="button"
+          fontWeight="semibold"
+          py={2}
+          px={4}
           width="300px"
+          borderWidth="1px"
+          borderColor="gray"
+          rounded="md"
+          _hover={{ bg: "blue.500", color: " white" }}
           onClick={resetGame}
         >
-          reset
-        </Button>
+          Reset
+        </PseudoBox>
       </Flex>
     </React.Fragment>
   )
